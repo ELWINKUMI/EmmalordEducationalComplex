@@ -73,33 +73,6 @@ function typeWriter() {
 
 window.addEventListener('load', typeWriter);
 
-// Animate statistics
-function animateValue(obj, start, end, duration) {
-    let startTimestamp = null;
-    const step = (timestamp) => {
-        if (!startTimestamp) startTimestamp = timestamp;
-        const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-        obj.innerHTML = Math.floor(progress * (end - start) + start);
-        if (progress < 1) {
-            window.requestAnimationFrame(step);
-        }
-    };
-    window.requestAnimationFrame(step);
-}
-
-// Animate statistics when they come into view
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-            animateValue(document.getElementById("studentCount"), 0, 1000, 2000);
-            animateValue(document.getElementById("teacherCount"), 0, 50, 2000);
-            animateValue(document.getElementById("satisfactionRate"), 0, 98, 2000);
-            observer.unobserve(entry.target);
-        }
-    });
-}, { threshold: 0.5 });
-
-observer.observe(document.querySelector('.statistics'));
 
 // Smooth scrolling for navigation
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -210,3 +183,85 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    const highlightItems = document.querySelectorAll('.highlight-item');
+    
+    highlightItems.forEach(item => {
+        item.addEventListener('click', function() {
+            this.classList.toggle('flip');
+        });
+    });
+});
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const stats = document.querySelectorAll('.stat-number');
+    const statisticsSection = document.querySelector('.statistics');
+    let animated = false;
+
+    function animateValue(obj, start, end, duration) {
+        let startTimestamp = null;
+        const step = (timestamp) => {
+            if (!startTimestamp) startTimestamp = timestamp;
+            const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+            obj.textContent = Math.floor(progress * (end - start) + start);
+            if (progress < 1) {
+                window.requestAnimationFrame(step);
+            }
+        };
+        window.requestAnimationFrame(step);
+    }
+
+    function startAnimation() {
+        if (animated) return;
+        animated = true;
+        stats.forEach(stat => {
+            const end = parseInt(stat.getAttribute('data-target'));
+            animateValue(stat, 0, end, 2000);
+        });
+    }
+
+    // Intersection Observer
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                startAnimation();
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+
+    observer.observe(statisticsSection);
+
+    // Scroll event as a fallback
+    function checkScroll() {
+        const rect = statisticsSection.getBoundingClientRect();
+        if (rect.top <= window.innerHeight && rect.bottom >= 0) {
+            startAnimation();
+            window.removeEventListener('scroll', checkScroll);
+        }
+    }
+
+    window.addEventListener('scroll', checkScroll);
+
+    // Check immediately in case the section is already visible
+    checkScroll();
+});
+function animateValue(obj, start, end, duration) {
+    let startTimestamp = null;
+    const step = (timestamp) => {
+        if (!startTimestamp) startTimestamp = timestamp;
+        const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+        let value = Math.floor(progress * (end - start) + start);
+        obj.textContent = value;
+        if (obj.nextElementSibling && obj.nextElementSibling.tagName === 'SPAN') {
+            obj.textContent = value + obj.nextElementSibling.textContent;
+        }
+        if (progress < 1) {
+            window.requestAnimationFrame(step);
+        }
+    };
+    window.requestAnimationFrame(step);
+}
