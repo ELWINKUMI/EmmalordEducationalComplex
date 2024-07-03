@@ -345,24 +345,24 @@
                         <td>September 5, 2023</td>
                     </tr>
                     <tr>
-                        <td>November</td>
-                        <td>Parent-Teacher Conference</td>
-                        <td>November 15, 2023</td>
+                        <td>August</td>
+                        <td>Graduation</td>
+                        <td>August 5, 2024</td>
                     </tr>
                     <tr>
-                        <td>December</td>
-                        <td>Winter Break</td>
+                        <td>August</td>
+                        <td>Ourday/Vacation</td>
                         <td>December 23, 2023 - January 3, 2024</td>
                     </tr>
                     <tr>
-                        <td>March</td>
-                        <td>Spring Break</td>
-                        <td>March 12, 2024 - March 16, 2024</td>
+                        <td>September</td>
+                        <td>School Resumes</td>
+                        <td>September 24, 2024</td>
                     </tr>
                     <tr>
-                        <td>June</td>
-                        <td>Graduation Ceremony</td>
-                        <td>June 8, 2024</td>
+                        <td>October</td>
+                        <td>PTA Meeting</td>
+                        <td>October 15,24</td>
                     </tr>
                 </tbody>
             </table>
@@ -427,15 +427,16 @@
                 </div>
                 <div class="footer-section message-form">
                     <h4>Send Us a Message</h4>
-                    <form>
-                        <input type="text" placeholder="Your Name" required>
-                        <input type="email" placeholder="Your Email" required>
-                        <textarea placeholder="Your Message" required></textarea>
+                    <form id="contact-form">
+                        <input type="text" name="name" placeholder="Your Name" required>
+                        <input type="email" name="email" placeholder="Your Email" required>
+                        <textarea name="message" placeholder="Your Message" required></textarea>
                         <button type="submit">Send Message</button>
                     </form>
+                    <div id="success-message" style="display:none; color: green;">
+                        Your message has been sent successfully!
+                    </div>
                 </div>
-            </div>
-        </div>
     </footer>
 
     <script src="script.js"></script>
