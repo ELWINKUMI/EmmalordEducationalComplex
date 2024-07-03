@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Emmalord Educational Complex offers comprehensive educational programs. Learn more about our admission process and academic offerings.">
+    <meta name="keywords" content="Emmalord Educational Complex, education, admission, academic offerings">
+    <meta name="author" content="Elwin Kumi Obrempong">
+    <meta name="robots" content="index, follow">
+    <link rel="icon" href="images/logo.png">
+    <title>Emmalord Educational Complex</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="top-bar">
+            <div class="datetime" id="datetime">
+                <p class="date" id="date"></p>
+                <p class="time" id="time"></p>
+            </div>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/YourPage" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://twitter.com/YourProfile" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com/YourProfile" target="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <nav class="nav-bar" id="nav-bar">
+        <div class="container">
+            <div class="school-logo">
+                <img src="images/logo.png" alt="School Logo">
+                <span class="school-name">Emmalord Educational Complex</span>
+            </div>
+            <span class="hamburger" id="hamburger">&#9776;</span>
+            <ul id="menu">
+                <span class="close-btn" id="close-btn"></span>
+                <li><a href="#home"><i class="fa fa-home" aria-hidden="true"></i> HOME</a></li>
+                <li class="dropdown">
+                    <a href="#about" class="dropbtn">ABOUT US <i class="fa fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="#staffs">Staff</a>
+                        <a href="#gallery">Gallery</a>
+                        <a href="#students">Students</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#academics" class="dropbtn">ACADEMICS <i class="fa fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="#news">News</a>
+                        <a href="#calendar">Calendar</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#admissions" class="dropbtn">ADMISSION <i class="fa fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="#requirements">Requirements & Procedure</a>
+                        <a href="#application-forms">Application Forms</a>
+                    </div>
+                </li>
+                <li><a href="#contact">CONTACT US</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="hero-slideshow">
+        <div class="slideshow-container">
+            <div class="slide fade">
+                <img src="images/2.jpg" alt="Slide 1">
+                <div class="caption">Our state-of-the-art facilities</div>
+            </div>
+            <div class="slide fade">
+                <img src="images/8.jpg" alt="Slide 2">
+                <div class="caption">Engaging classroom environments</div>
+            </div>
+            <div class="slide fade">
+                <img src="images/5.jpg" alt="Slide 3">
+                <div class="caption">Diverse extracurricular activities</div>
+            </div>
+            <div class="slide fade">
+                <img src="images/4.jpg" alt="Slide 4">
+                <div class="caption">Dedicated and experienced faculty</div>
+            </div>
+            <div class="slide fade">
+                <img src="images/6.jpg" alt="Slide 5">
+                <div class="caption">Promoting a culture of excellence</div>
+            </div>
+
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+        <div class="dot-container">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+            <span class="dot" onclick="currentSlide(5)"></span>
+        </div>
+    </div>
+
+    <section class="home" id="home">
+        <div class="container">
+            <div class="home-content">
+                <h1 id="welcome-message"></h1>
+                <p style="font-family: cursive; font-weight: bold;">Empowering minds, shaping futures. At Emmalord, we provide a nurturing and inclusive environment where students excel academically, socially, and personally. Our state-of-the-art facilities, dedicated staff, and diverse programs ensure a well-rounded education for all.</p>
+                
+                <div class="highlights">
+                    <h2 style="margin-top: -30px; text-align: left; text-decoration: none; font-size: 30px;">Why Choose Emmalord?</h2>
+                    <div class="highlight-grid">
+                        <div class="highlight-item">
+                            <i class="fas fa-book-open"></i>
+                            <h3>Comprehensive Curriculum</h3>
+                            <p>Tailored programs to meet diverse learning needs</p>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-chalkboard-teacher"></i>
+                            <h3>Expert Faculty</h3>
+                            <p>Experienced and caring educators dedicated to student success</p>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-laptop"></i>
+                            <h3>Modern Facilities</h3>
+                            <p>State-of-the-art classrooms and learning resources</p>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-users"></i>
+                            <h3>Extracurricular Activities</h3>
+                            <p>Wide range of programs for holistic development</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="statistics">
+                    <div class="stat-item">
+                        <h3 id="studentCount">0</h3>
+                        <p>Students Enrolled</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3 id="teacherCount">0</h3>
+                        <p>Expert Teachers</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3 id="satisfactionRate">0</h3>
+                        <p>Parent Satisfaction</p>
+                    </div>
+                </div>
+                
+                <div class="cta">
+                    <a href="#admissions" class="cta-button">Explore Admissions</a>
+                    <a href="#about" class="cta-button secondary">Read More About Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2 style="margin-top: -90px; padding-top: -90px; margin-bottom: 15px;">About Us</h2>
+            <p>Emmalord Educational Complex is committed to providing a world-class education that nurtures intellectual curiosity, fosters personal growth, and prepares students for success in a rapidly changing world. Our dedicated staff, state-of-the-art facilities, and comprehensive curriculum work together to create an inspiring learning environment.</p>
+        </div>
+    </section>
+
+    <section id="staffs" class="staffs">
+        <div class="container staffs">
+            <h2>Our Staff</h2>
+            <p>Our dedicated and experienced staff at Emmalord Educational Complex is committed to providing a nurturing and inclusive learning environment for our students. With a passion for education and a focus on student success, our staff members go above and beyond to ensure that each student receives the support and guidance they need to excel academically and personally. From our principal to our vice principals, our staff is dedicated to creating a positive and engaging educational experience for all. With their expertise and dedication, our staff plays a crucial role in shaping the future of our students and preparing them for success in a rapidly changing world.</p>
+            <div class="staff-grid">
+                <div class="column">
+                    <div class="staff-card">
+                        <img src="images/1.jpg" alt="John Doe">
+                        <h3>John Doe</h3>
+                        <p>Principal</p>
+                        <a href="mailto:john.doe@emmalord.edu">john.doe@emmalord.edu</a>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="staff-card">
+                        <img src="images/3.jpg" alt="Jane Smith">
+                        <h3>Jane Smith</h3>
+                        <p>Vice Principal</p>
+                        <a href="mailto:jane.smith@emmalord.edu">jane.smith@emmalord.edu</a>
+                    </div>
+                    
+                </div>
+                <div class="column">
+                    <div class="staff-card">
+                        <img src="images/3.jpg" alt="Jane Smith">
+                        <h3>Jane Smith</h3>
+                        <p>Vice Principal</p>
+                        <a href="mailto:jane.smith@emmalord.edu">jane.smith@emmalord.edu</a>
+                    </div>
+                    
+                </div>
+                <div class="column">
+                    <div class="staff-card">
+                        <img src="images/3.jpg" alt="Jane Smith">
+                        <h3>Jane Smith</h3>
+                        <p>Vice Principal</p>
+                        <a href="mailto:jane.smith@emmalord.edu">jane.smith@emmalord.edu</a>
+                    </div>
+                    
+                </div>
+                <div class="column">
+                    <div class="staff-card">
+                        <img src="images/3.jpg" alt="Jane Smith">
+                        <h3>Jane Smith</h3>
+                        <p>Vice Principal</p>
+                        <a href="mailto:jane.smith@emmalord.edu">jane.smith@emmalord.edu</a>
+                    </div>
+                    
+                </div>
+                <div class="column">
+                    <div class="staff-card">
+                        <img src="images/3.jpg" alt="Jane Smith">
+                        <h3>Jane Smith</h3>
+                        <p>Vice Principal</p>
+                        <a href="mailto:jane.smith@emmalord.edu">jane.smith@emmalord.edu</a>
+                    </div>
+                    
+                </div>
+                <div class="column">
+                    <div class="staff-card">
+                        <img src="images/3.jpg" alt="Jane Smith">
+                        <h3>Jane Smith</h3>
+                        <p>Vice Principal</p>
+                        <a href="mailto:jane.smith@emmalord.edu">jane.smith@emmalord.edu</a>
+                    </div>
+                    
+                </div>
+                <div class="column">
+                    <div class="staff-card">
+                        <img src="images/3.jpg" alt="Jane Smith">
+                        <h3>Jane Smith</h3>
+                        <p>Vice Principal</p>
+                        <a href="mailto:jane.smith@emmalord.edu">jane.smith@emmalord.edu</a>
+                    </div>
+                </div>
+                <!-- Add more staff cards as needed -->
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="gallery">
+        <div class="gallery">
+            <h2 >Gallery </h2>
+            <p>Explore our campus, classrooms, and extracurricular activities through our photo gallery. Our state-of-the-art facilities provide a vibrant and engaging learning environment for our students, while our extracurricular programs offer opportunities for personal growth and development.</p>
+            <div class="gallery-grid">
+              <div class="column">
+                <img src="images/10.jpg" alt="Image 1">
+                <img src="images/5.jpg" alt="Image 2">
+              </div>
+              <div class="column">
+                <img src="images/4.jpg" alt="Image 3">
+                <img src="images/8.jpg" alt="Image 4">
+              </div>
+              <div class="column">
+                <img src="images/4.jpg" alt="Image 3">
+                <img src="images/8.jpg" alt="Image 4">
+              </div>
+              <div class="column">
+                <img src="images/4.jpg" alt="Image 3">
+                <img src="images/8.jpg" alt="Image 4">
+              </div>
+              <!-- Add more columns as needed -->
+            </div>
+          </div>
+    </section>
+
+    <section id="students" class="students">
+        <div class="container">
+            <h2 style="margin-bottom: 12px;">Our Students</h2>
+            <p>At Emmalord, we celebrate the diversity and achievements of our student body. Our students come from various backgrounds and contribute to a vibrant, inclusive community. Here, every student is encouraged to explore their passions, develop their talents, and reach their full potential.</p>
+        </div>
+    </section>
+
+    <section id="academics" class="academics">
+        <div class="container">
+            <h2 style="margin-top: 5px; margin-bottom: 10px;">Academics</h2>
+            <p>Our academic programs are designed to challenge and inspire students, preparing them for higher education and future careers. We offer a balanced curriculum that emphasizes core subjects while also promoting creativity, critical thinking, and problem-solving skills.</p>
+        </div>
+    </section>
+
+    <section id="news" class="news">
+        <div class="container">
+            <h2 style="margin-top: -12px; margin-bottom: 15px;">Latest News</h2>
+            <div class="news-grid">
+                <div class="news-item">
+                    <h3>Annual Science Fair Winners Announced</h3>
+                    <p>Date: May 15, 2023</p>
+                    <p>Our students showcased impressive projects at this year's Science Fair...</p>
+                </div>
+                <div class="news-item">
+                    <h3>New Computer Lab Inaugurated</h3>
+                    <p>Date: April 3, 2023</p>
+                    <p>We're excited to announce the opening of our state-of-the-art computer lab...</p>
+                </div>
+                <!-- Add more news items as needed -->
+            </div>
+        </div>
+    </section>
+    <section id="calendar" class="calendar">
+        <div class="container">
+            <h2>Academic Calendar</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Month</th>
+                        <th>Event</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>September</td>
+                        <td>First Day of School</td>
+                        <td>September 5, 2023</td>
+                    </tr>
+                    <tr>
+                        <td>November</td>
+                        <td>Parent-Teacher Conference</td>
+                        <td>November 15, 2023</td>
+                    </tr>
+                    <tr>
+                        <td>December</td>
+                        <td>Winter Break</td>
+                        <td>December 23, 2023 - January 3, 2024</td>
+                    </tr>
+                    <tr>
+                        <td>March</td>
+                        <td>Spring Break</td>
+                        <td>March 12, 2024 - March 16, 2024</td>
+                    </tr>
+                    <tr>
+                        <td>June</td>
+                        <td>Graduation Ceremony</td>
+                        <td>June 8, 2024</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <section id="admissions" class="admissions">
+        <div class="container">
+            <h2 style="margin-top: -40px;"> Admissions</h2>
+            <p>We welcome applications from students who are eager to learn and grow in our supportive educational environment. Our admission process is designed to ensure that we can meet the needs of each student and that they will thrive in our community.</p>
+        </div>
+    </section>
+
+    <section id="requirements" class="requirements">
+        <div class="container">
+            <h2 style="margin-top: -80px; font-size: 30px;">Admission Requirements & Procedure</h2>
+            <ol>
+                <li style="margin-left: 15px;">Complete the online application form</li>
+                <li style="margin-left: 15px">Submit required documents (birth certificate, previous school records)</li>
+                <li style="margin-left: 15px">Pay the application fee</li>
+                <li style="margin-left: 15px">Schedule an interview and assessment</li>
+                <li style="margin-left: 15px">Receive admission decision</li>
+            </ol>
+        </div>
+    </section>
+
+    <section id="application-forms" class="application-forms">
+        <div class="container">
+            <h2 >Application Forms</h2>
+            <p>To start your application process, please download and fill out the following forms:</p>
+            <ul>
+                <li><a href="forms/student_application.pdf" style="text-decoration: none;">Student Application Form</a></li>
+                <li><a href="forms/health_record.pdf" style="text-decoration: none;">Health Record Form</a></li>
+                <li><a href="forms/recommendation.pdf" style="text-decoration: none;">Recommendation Form</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section contact-info">
+                    <h4>Contact Us</h4>
+                    <p><strong>Address:</strong> Bono Region, Sunyani-Dumasua</p>
+                    <p><strong>Phone:</strong> (+233) 50-882-9657</p>
+                    <p><strong>Email:</strong> info@emmalord.edu</p>
+                </div>
+                <div class="footer-section quick-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Academics</a></li>
+                        <li><a href="#">Admissions</a></li>
+                        <li><a href="#">News</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section social-links">
+                    <h4>Follow Us</h4>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+                <div class="footer-section message-form">
+                    <h4>Send Us a Message</h4>
+                    <form>
+                        <input type="text" placeholder="Your Name" required>
+                        <input type="email" placeholder="Your Email" required>
+                        <textarea placeholder="Your Message" required></textarea>
+                        <button type="submit">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    
+</body>
+</html>
