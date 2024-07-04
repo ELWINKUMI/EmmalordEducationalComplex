@@ -59,12 +59,14 @@ header {
 }
 
 /* Navigation Styles */
+
 .nav-bar {
     background-color: #fff;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     position: sticky;
     top: 0;
     z-index: 1000;
+    padding-bottom: 15px;
 }
 
 .nav-bar .container {
@@ -81,6 +83,7 @@ header {
 .school-logo img {
     height: 50px;
     margin-right: 10px;
+    margin-top: 5px;
 }
 
 .school-name {
@@ -227,10 +230,10 @@ header {
 .home p {
     font-size: 18px;
     color: #555;
-    max-width: 800px;
-    margin: 0 auto 40px;
-    text-align: left;
-    margin-left: 8px;
+    font-family: "Libre Franklin", sans-serif;
+    font-style: normal;
+   
+  
 }
 
 
@@ -810,14 +813,9 @@ footer {
         height: 60vh;
     }
 
-    .home h1 {
-        font-size: 28px;
-        margin-top: -90px;
-    }
 
     .home p {
-        font-size: 16px;
-        margin-top: -50px;
+        font-size: 10px;
     }
 
   
@@ -844,11 +842,14 @@ footer {
    
 
     .home h1 {
-        font-size: 24px;
+        font-size: 15px;
+        text-align: center;
+        margin-bottom: 3px;
     }
 
     .home p {
         font-size: 14px;
+        padding-top: -50px;
     }
 
 
@@ -861,6 +862,7 @@ footer {
         margin: 10px auto;
         max-width: 200px;
     }
+    
 }
 /* CSS for Academic Calendar Section */
 .calendar {
@@ -974,6 +976,7 @@ footer {
     .close-btn {
         display: inline-block;
     }
+    
 }
 .caption {
     position: absolute;
@@ -982,7 +985,9 @@ footer {
     background-color: rgba(0, 0, 0, 0.7);
     color: #fff;
     font-size: 20px;
-    font-family: cursive;
+    font-family: "Libre Franklin", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
     padding: 40px;
     border-radius: 10px;
 }
@@ -1005,7 +1010,7 @@ footer {
     .caption {
         position: absolute;
         bottom: 60px;
-        left: 90px;
+        left: 12%;
         background-color: rgba(0, 0, 0, 0.7);
         color: #fff;
         padding: 10px 20px;
@@ -1117,7 +1122,7 @@ footer {
     }
     .highlight-front h3 {
         font-size: 18px;
-        padding-bottom: 40px;
+        padding-bottom: -2px;
         text-align: center;
     }
     .highlight-front p {
@@ -1296,3 +1301,4 @@ footer {
 .resources ul li a:hover {
     color: #023535;
 }
+
