@@ -569,7 +569,8 @@ footer {
     color: #fff;
     padding: 0px 0;
     font-size: 14px;
-    margin:5px;
+    margin-right: 5px;
+    margin-left: 5px;
 }
 
 .footer-content {
