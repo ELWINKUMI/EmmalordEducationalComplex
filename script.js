@@ -160,7 +160,7 @@ document.addEventListener('DOMContentLoaded', () => {
     staffModal.classList.add('staff-modal');
     staffModalContent.classList.add('staff-modal-content');
     staffModalClose.classList.add('staff-modal-close');
-    staffModalClose.innerHTML = '&times;';
+    staffModalClose.innerHTML = '';
 
     staffModal.appendChild(staffModalClose);
     staffModal.appendChild(staffModalContent);
