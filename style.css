@@ -375,6 +375,7 @@ header {
     background-color: #eaeef1;
     text-align: left;
     padding-bottom: 10px;
+    margin-right:20px;
 
   }
   
@@ -568,7 +569,8 @@ footer {
     color: #fff;
     padding: 0px 0;
     font-size: 14px;
-    margin-right: -12px;
+    margin-right: 5px;
+    margin-left: 5px;
 }
 
 .footer-content {
