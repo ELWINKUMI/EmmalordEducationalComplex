@@ -27,6 +27,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Ga+Maamli&family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script src="script.js" defer></script>
 </head>
 <body>
@@ -531,19 +532,50 @@
                 </div>
                 <div class="footer-section message-form">
                     <h4>Send Us a Message</h4>
-                    <form id="contact-form">
-                        <input type="text" name="name" placeholder="Your Name" required>
-                        <input type="email" name="email" placeholder="Your Email" required>
-                        <textarea name="message" placeholder="Your Message" required></textarea>
-                        <button type="submit">Send Message</button>
-                    </form>
+<form id="contact-form">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+    <textarea name="message" placeholder="Your Message" required></textarea>
+    <button type="submit">Send Message</button>
+</form>
                     <div id="success-message" style="display:none; color: green;">
                         Your message has been sent successfully!
                     </div>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 Emmalord Educational Complex. All Rights Reserved. | Powered by <a href="http://example.com" style="text-decoration: none; color: #f1c40f;">360 Tech</a></p>
+            <script>
+                (function() {
+                    emailjs.init("xcxKiRYGT8ejGSrNR");
+                })();
+            
+                document.getElementById('contact-form').addEventListener('submit', function(event) {
+                    event.preventDefault();
+            
+                    var submitButton = this.querySelector('button[type="submit"]');
+                    var originalButtonText = submitButton.innerHTML;
+            
+                    submitButton.disabled = true;
+                    submitButton.innerHTML = 'Sending...';
+            
+                    emailjs.sendForm('service_59bwpcv', 'template_dh4cnlc', this)
+                        .then(function(response) {
+                            console.log('SUCCESS!', response.status, response.text);
+                            submitButton.innerHTML = 'Sent Successfully!';
+                            setTimeout(function() {
+                                submitButton.innerHTML = originalButtonText;
+                                submitButton.disabled = false;
+                            }, 3000);
+                        }, function(error) {
+                            console.log('FAILED...', error);
+                            submitButton.innerHTML = 'Failed to Send';
+                            setTimeout(function() {
+                                submitButton.innerHTML = originalButtonText;
+                                submitButton.disabled = false;
+                            }, 3000);
+                        });
+                });
+            </script>   
+            <p>&copy; 2024 Emmalord Educational Complex. All Rights Reserved. | Powered by <a href="http://example.com" style="text-decoration: none; color: #f1c40f;">360 Tech</a></p>
             </div>
         </div>
     </footer>
@@ -553,3 +585,15 @@
     
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
