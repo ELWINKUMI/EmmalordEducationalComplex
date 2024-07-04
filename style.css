@@ -230,6 +230,7 @@ header {
     max-width: 800px;
     margin: 0 auto 40px;
     text-align: left;
+    margin-left: 8px;
 }
 
 
@@ -303,6 +304,7 @@ header {
     display: flex;
     flex-wrap: wrap;
     padding: 0 -7px;
+    
   }
   
   .column {
@@ -318,7 +320,7 @@ header {
     overflow: hidden;
     text-align: center;
     transition: transform 0.3s;
-    margin-top: 10px;
+    margin-top: 15px;
     padding-bottom: 12px;
   }
   
@@ -329,8 +331,9 @@ header {
   .staff-card img {
     width: 100%;
     height: 200px;
-    object-fit: cover;
+    
     vertical-align: middle;
+    
   }
   
   .staff-card h3 {
@@ -372,6 +375,7 @@ header {
     background-color: #eaeef1;
     text-align: left;
     padding-bottom: 10px;
+
   }
   
   .gallery h2 {
@@ -381,7 +385,8 @@ header {
     border-bottom: 4px solid #f1c40f;
     display: inline-block;
     text-align: left;
-    margin-left: 20px;
+    margin-left: 40px;
+
   }
   .gallery p {
     font-size: 15px;
@@ -389,7 +394,7 @@ header {
     margin-bottom: 40px;
     margin-top: -50px;
     text-align: left;
-    margin-left: 12px;
+    margin-left: 30px;
     padding-bottom: 10px;
   }
   
@@ -399,7 +404,7 @@ header {
     padding: 0 4px;
     padding-top: -90px;
     margin-top: -50px;
-    margin-left: -12px;
+    margin-left: 25px;
     margin-right: -12px;
   }
   
@@ -543,7 +548,6 @@ header {
 .contact-form button:hover {
     background-color: #035e5e;
 }
-
 /* Footer Styles */
 footer {
     background-color: #023535;
@@ -602,7 +606,6 @@ footer {
 .footer-section ul li a:hover {
     color: #f1c40f;
     text-decoration: underline;
-
 }
 
 .social-links a {
@@ -642,6 +645,28 @@ footer {
 
 .message-form form button:hover {
     background-color: #d4ac0d;
+}
+
+/* Footer Bottom Styles */
+.footer-bottom {
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+    border-top: 1px solid #f1c40f;
+}
+
+.footer-bottom p {
+    margin: 0;
+}
+
+.footer-bottom a {
+    color: #f1c40f;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-bottom a:hover {
+    color: #d4ac0d;
 }
 
 /* Responsive Styles for Footer */
@@ -770,12 +795,12 @@ footer {
 
     .home h1 {
         font-size: 28px;
-        margin-top: -60px;
+        margin-top: -90px;
     }
 
     .home p {
         font-size: 16px;
-        margin-top: -20px;
+        margin-top: -50px;
     }
 
   
@@ -979,10 +1004,8 @@ footer {
             top: -20px;
 }
 
-
-
-  /* Highlight Styles */
-  .highlights {
+/* Highlight Styles */
+.highlights {
     margin-top: 60px;
 }
 .highlights h2 {
@@ -1001,6 +1024,7 @@ footer {
     position: relative;
     width: 100%;
     height: 250px; /* Set a fixed height for the highlights */
+    overflow: hidden; /* Ensure content doesn't overflow */
 }
 .highlight-front, .highlight-back {
     backface-visibility: hidden;
@@ -1011,9 +1035,12 @@ footer {
     width: 100%;
     height: 100%;
     border-radius: 10px;
-    padding: 30px;
+    padding: 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     text-align: center;
+    overflow: hidden; /* Ensure content doesn't overflow */
+    word-wrap: break-word; /* Handle long words */
+    overflow-wrap: break-word; /* Handle long words */
 }
 .highlight-front {
     z-index: 2;
@@ -1030,10 +1057,26 @@ footer {
     color: #023535;
     margin-bottom: 20px;
 }
+.highlight-front p {
+    font-size: 16px;
+    color: #023535;
+}
 .highlight-back {
     transform: rotateY(180deg);
     z-index: 1;
     background-color: #fff;
+    padding: 20px;
+    box-sizing: border-box; /* Ensure padding is included in the element's total width and height */
+}
+.highlight-back h3 {
+    font-size: 20px;
+    color: #023535;
+    margin-bottom: 20px;
+}
+.highlight-back p {
+    font-size: 16px;
+    color: #023535;
+    margin-top: 12px;
 }
 .highlight-item.flip .highlight-front {
     transform: rotateY(180deg);
@@ -1044,36 +1087,54 @@ footer {
 /* Responsive Styles */
 @media screen and (max-width: 768px) {
     .highlight-item {
-        height: 300px; /* Adjust height for smaller screens */
+        height: 350px; /* Adjust height for even smaller screens */
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+        align-items: center;
+        justify-content: center;
     }
     .highlight-front i {
-        font-size: 36px;
+        font-size: 30px;
+        padding-top: 60px;
     }
     .highlight-front h3 {
         font-size: 18px;
+        padding-bottom: 40px;
+        text-align: center;
     }
     .highlight-front p {
-        font-size: 16px;
+        font-size: 14px;
+        text-align: center;
     }
     .highlight-back h3 {
         font-size: 18px;
     }
     .highlight-back p {
-        font-size: 16px;
+        font-size: 14px;
     }
 }
 @media screen and (max-width: 480px) {
     .highlight-item {
         height: 350px; /* Adjust height for even smaller screens */
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+        align-items: center;
+        justify-content: center;
     }
     .highlight-front i {
         font-size: 30px;
+        padding-top: 70px;
     }
     .highlight-front h3 {
         font-size: 16px;
+        
     }
     .highlight-front p {
         font-size: 14px;
+        text-align: center;
+      
     }
     .highlight-back h3 {
         font-size: 16px;
@@ -1083,6 +1144,9 @@ footer {
         margin-top: 12px;
     }
 }
+
+
+ 
 .statistics {
     display: flex;
     justify-content: space-around;
@@ -1132,4 +1196,85 @@ footer {
     font-size: 18px;
     color: #555;
     margin-top: 10px;
+}
+
+/* Student Life Section */
+.student-life {
+    background-color: #f9f9f9;
+    padding: 60px 0;
+}
+
+.student-life h2 {
+    color: #023535;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.student-life p {
+    color: #555;
+    text-align: left;
+    margin-bottom: 20px;
+    font-size: 1rem;
+}
+
+.student-life ul {
+    list-style-type: none;
+    padding: 0;
+    text-align:left;
+}
+
+.student-life ul li {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.student-life ul li::before {
+    content: '•';
+    color: #023535;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
+
+/* Resources Section */
+.resources {
+    background-color: #fff;
+    padding: 60px 0;
+}
+
+.resources h2 {
+    color: #023535;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.resources p {
+    color: #555;
+    text-align: left;
+    margin-bottom: 20px;
+    font-size: 1rem;
+}
+
+.resources ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: left;
+}
+
+.resources ul li {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.resources ul li a {
+    color: #1367d4;
+    text-decoration: none
+}
+
+.resources ul li a:hover {
+    color: #023535;
 }
