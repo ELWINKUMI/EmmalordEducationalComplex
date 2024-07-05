@@ -1122,8 +1122,11 @@ footer {
 
 /* Student Life Section */
 .student-life {
-    background-color: #d1f0fe;
+    background-color: #edf4fc;
     padding: 60px 0;
+    margin-bottom: -10px;
+    padding-bottom: 0px;
+    padding-top: 0px;
 }
 
 .student-life h2 {
@@ -1165,6 +1168,7 @@ footer {
 .resources {
     background-color: #fff;
     padding: 60px 0;
+    padding-top: 29px;
 }
 
 .resources h2 {
