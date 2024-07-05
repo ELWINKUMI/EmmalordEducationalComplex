@@ -17,36 +17,6 @@ document.addEventListener("click", function(event) {
         menu.classList.remove("show");
     }
 });
-
-// Slideshow functionality
-let slideIndex = 0;
-const slides = document.getElementsByClassName("slide");
-const dots = document.getElementsByClassName("dot");
-showSlides();
-
-function plusSlides(n) {
-    showSlides(slideIndex += n);
-}
-
-function currentSlide(n) {
-    showSlides(slideIndex = n);
-}
-
-function showSlides() {
-    let i;
-    for (i = 0; i < slides.length; i++) {
-        slides[i].classList.remove("active");
-    }
-    for (i = 0; i < dots.length; i++) {
-        dots[i].classList.remove("active");
-    }
-    slideIndex++;
-    if (slideIndex > slides.length) {slideIndex = 1}
-    slides[slideIndex-1].classList.add("active");
-    dots[slideIndex-1].classList.add("active");
-    setTimeout(showSlides, 5000); // Change image every 5 seconds
-}
-
 // Date and time update
 function updateDateTime() {
     const now = new Date();
@@ -194,8 +164,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-
-
 document.addEventListener('DOMContentLoaded', function() {
     const stats = document.querySelectorAll('.stat-number');
     const statisticsSection = document.querySelector('.statistics');
@@ -265,4 +233,3 @@ function animateValue(obj, start, end, duration) {
     };
     window.requestAnimationFrame(step);
 }
-

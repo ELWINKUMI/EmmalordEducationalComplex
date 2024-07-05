@@ -5,14 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Emmalord Educational Complex offers comprehensive educational programs. Learn more about our admission process and academic offerings.">
     <meta name="keywords" content="Emmalord Educational Complex, education, admission, academic offerings Emmalord, Emmalord Complex">
-        <meta name="google-site-verification" content="a0e44e2b09e0f641">
-
-    <meta name="author" content="Elwin Kumi Obrempong">
     <meta name="google-site-verification" content="a0e44e2b09e0f641">
-
+    <meta name="author" content="Elwin Kumi Obrempong" href="https://wa.link/e8vuh7">
+    <meta name="google-site-verification" content="a0e44e2b09e0f641">
     <meta name="robots" content="index, follow">
-    <link rel="icon" href="images/logo.png">
     <title>Emmalord Educational Complex</title>
+    <link rel="icon" href="images/logo.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <link rel="preload" href="style.css" as="style">
@@ -85,46 +83,155 @@
     <div class="hero-slideshow">
         <div class="slideshow-container">
             <div class="slide fade">
-                <img src="images/2.jpg" alt="Slide 1">
-                <div class="caption">Our state-of-the-art facilities</div>
+                <img src="images/11.jpg" alt="Slide 1">
+                <div class="overlay"></div>
+                <div class="caption">Cutting-edge Learning Spaces</div>
             </div>
             <div class="slide fade">
                 <img src="images/8.jpg" alt="Slide 2">
+                <div class="overlay"></div>
                 <div class="caption">Engaging classroom environments</div>
             </div>
             <div class="slide fade">
                 <img src="images/5.jpg" alt="Slide 3">
+                <div class="overlay"></div>
                 <div class="caption">Diverse extracurricular activities</div>
             </div>
             <div class="slide fade">
                 <img src="images/4.jpg" alt="Slide 4">
-                <div class="caption">Dedicated and experienced faculty</div>
+                <div class="overlay"></div>
+                <div class="caption" style="font-size: 18px;">Dedicated and experienced faculty</div>
             </div>
             <div class="slide fade">
-                <img src="images/6.jpg" alt="Slide 5">
-                <div class="caption">Promoting a culture of excellence</div>
+                <img src="images/2.jpg" alt="Slide 5">
+                <div class="overlay"></div>
+                <div class="caption" style="font-size: 18px;">Promoting a culture of excellence</div>
             </div>
-
+            <div class="slide fade">
+                <img src="images/6.jpg" alt="Slide 6">
+                <div class="overlay"></div>
+                <div class="caption">Empowering through Sports Excellence</div>
+            </div>
+            <div class="slide fade">
+                <img src="images/logo.png" alt="Slide 7">
+                <div class="overlay"></div>
+            </div>
+    
             <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
             <a class="next" onclick="plusSlides(1)">&#10095;</a>
-        </div>
-        <div class="dot-container">
-            <span class="dot" onclick="currentSlide(1)"></span>
-            <span class="dot" onclick="currentSlide(2)"></span>
-            <span class="dot" onclick="currentSlide(3)"></span>
-            <span class="dot" onclick="currentSlide(4)"></span>
-            <span class="dot" onclick="currentSlide(5)"></span>
+    
+            <div class="dot-container">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(4)"></span>
+                <span class="dot" onclick="currentSlide(5)"></span>
+                <span class="dot" onclick="currentSlide(6)"></span>
+                <span class="dot" onclick="currentSlide(7)"></span>
+            </div>
         </div>
     </div>
 
+    
+    <script>
+       let slideIndex = 0;
+let slides, dots, slideInterval;
+
+function showSlides(n) {
+    let i;
+    slides = document.getElementsByClassName("slide");
+    dots = document.getElementsByClassName("dot");
+
+    if (n > slides.length) { slideIndex = 1 }
+    if (n < 1) { slideIndex = slides.length }
+    
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+
+    slides[slideIndex - 1].style.display = "block";
+    dots[slideIndex - 1].className += " active";
+    slideInterval = setTimeout(() => showSlides(slideIndex += 1), 3000); // Change image every 3 seconds
+}
+
+function plusSlides(n) {
+    clearTimeout(slideInterval);
+    showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+    clearTimeout(slideInterval);
+    showSlides(slideIndex = n);
+}
+
+showSlides(slideIndex);
+
+    </script>
+
+
+
+<style>
+ * { box-sizing: border-box; }
+body { margin: 0; font-family: Arial, sans-serif; }
+.hero-slideshow { position: relative; max-width: 100%; margin: auto; }
+.slideshow-container { position: relative; }
+.slide { display: none; position: relative; }
+.slide img { width: 100%; height: 500px; object-fit: cover; }
+.overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(68, 67, 67, 0.3); } /* Default for larger screens */
+.fade { animation-name: fade; animation-duration: 1.5s; }
+@keyframes fade { from {opacity: .4} to {opacity: 1} }
+.dot-container { position: absolute; bottom: 15px; left: 50%; transform: translateX(-50%); display: flex; justify-content: center; align-items: center; }
+.dot { cursor: pointer; height: 15px; width: 15px; margin: 0 5px; background-color: rgba(255, 255, 255, 0.5); border-radius: 50%; display: inline-block; transition: background-color 0.6s ease; }
+.active, .dot:hover { background-color: rgba(255, 255, 255, 1); }
+.prev, .next { cursor: pointer; position: absolute; top: 50%; width: auto; padding: 16px; margin-top: -22px; color: white; font-weight: bold; font-size: 18px; transition: 0.6s ease; user-select: none; z-index: 2; }
+.prev { left: 0; border-radius: 3px 0 0 3px; }
+.next { right: 0; border-radius: 0 3px 3px 0; }
+.prev:hover, .next:hover { background-color: rgba(0,0,0,0.8); }
+.caption { 
+    color: #f2f2f2; 
+    font-size: 30px; 
+    padding: 8px 20px; 
+    position: absolute; 
+    bottom: 80px; 
+    width: auto; 
+    max-width: 80%; 
+    text-align: center; 
+    z-index: 2; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    background: rgba(0, 0, 0, 0.7); 
+    border-radius: 10px;
+    white-space: nowrap; /* Prevent text wrapping */
+}
+
+@media only screen and (max-width: 600px) {
+    .caption { 
+        font-size: 15px; 
+        padding: 8px 10px; 
+        bottom: 40px; 
+        width: auto; 
+        max-width: 90%; 
+        left: 50%; 
+        transform: translateX(-50%); 
+    }
+    .slide img { width: 100%; height: 300px; object-fit: cover; }
+    .overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); }
+
+}
+
+</style>
     <section class="home" id="home">
         <div class="container">
             <div class="home-content">
                 <h1 id="welcome-message" style="margin-top: -70px;"></h1>
-                <p >Empowering minds, shaping futures. At Emmalord Educational Complex, we provide a nurturing and inclusive environment where students excel academically, socially, and personally. Our state-of-the-art facilities, dedicated staff, and diverse programs ensure a well-rounded education for all. We focus on individual growth, fostering a love for learning, and preparing students for a successful future. Our curriculum is designed to cater to different learning styles, ensuring every student receives the support they need to thrive. Beyond academics, we offer extensive extracurricular activities, from sports to arts, encouraging students to explore their passions and develop new skills. Our dedicated teachers and staff are committed to creating a positive and supportive atmosphere, where every student feels valued and motivated to reach their full potential. Join us at Emmalord Educational Complex and become part of a community that values excellence, respect, and lifelong learning, where every student is empowered to achieve greatness.</p>
+                <p >Empowering minds, shaping futures. At Emmalord Educational Complex, we provide a nurturing and inclusive environment where students excel academically, socially, and personally. Our state-of-the-art facilities, dedicated staff, and diverse programs ensure a well-rounded education for all. We focus on individual growth, fostering a love for learning, and preparing students for a successful future.</p>
                 
                 <div class="highlights">
-                    <h2 style="margin-top: -90px; padding-top: -90px; text-align: left; text-decoration: none; font-size: 30px;">Why Choose Emmalord?</h2>
+                    <h2 style="margin-top: -90px; padding-top: -90px; text-align: left; text-decoration: none; font-size: 20px;">Why Choose Emmalord?</h2>
                     <div class="highlight-grid">
                         <div class="highlight-item">
                             <div class="highlight-front">
@@ -536,7 +643,7 @@
     <input type="text" name="name" placeholder="Your Name" required>
     <input type="email" name="email" placeholder="Your Email" required>
     <textarea name="message" placeholder="Your Message" required></textarea>
-    <button type="submit">Send Message</button>
+    <button type="submit">Send Message <i ></i></button>
 </form>
                     <div id="success-message" style="display:none; color: green;">
                         Your message has been sent successfully!
@@ -545,37 +652,41 @@
             </div>
             <script>
                 (function() {
-                    emailjs.init("xcxKiRYGT8ejGSrNR");
+                    emailjs.init("xcxKiRYGT8ejGSrNR"); // Initialize EmailJS with your User ID
                 })();
-            
+        
                 document.getElementById('contact-form').addEventListener('submit', function(event) {
-                    event.preventDefault();
-            
+                    event.preventDefault(); // Prevent the default form submission
+        
                     var submitButton = this.querySelector('button[type="submit"]');
                     var originalButtonText = submitButton.innerHTML;
-            
-                    submitButton.disabled = true;
-                    submitButton.innerHTML = 'Sending...';
-            
+        
+                    submitButton.disabled = true; // Disable the button to prevent multiple submissions
+                    submitButton.innerHTML = 'Sending...'; // Change button text to indicate submission in progress
+        
                     emailjs.sendForm('service_59bwpcv', 'template_dh4cnlc', this)
                         .then(function(response) {
                             console.log('SUCCESS!', response.status, response.text);
-                            submitButton.innerHTML = 'Sent Successfully!';
+                            submitButton.innerHTML = 'Thanks for reaching out to us'; // Change button text on success
+                            submitButton.classList.add('success');
                             setTimeout(function() {
                                 submitButton.innerHTML = originalButtonText;
                                 submitButton.disabled = false;
+                                submitButton.classList.remove('success');
                             }, 3000);
                         }, function(error) {
                             console.log('FAILED...', error);
-                            submitButton.innerHTML = 'Failed to Send';
+                            submitButton.innerHTML = 'Failed to Send'; // Change button text on failure
+                            submitButton.classList.add('error');
                             setTimeout(function() {
                                 submitButton.innerHTML = originalButtonText;
                                 submitButton.disabled = false;
+                                submitButton.classList.remove('error');
                             }, 3000);
                         });
                 });
-            </script>   
-            <p>&copy; 2024 Emmalord Educational Complex. All Rights Reserved. | Powered by <a href="http://example.com" style="text-decoration: none; color: #f1c40f;">360 Tech</a></p>
+            </script>
+            <p style="margin-left: 50px;">&copy; 2024 Emmalord Educational Complex. All Rights Reserved. | Powered by <a href="https://wa.link/e8vuh7" style="text-decoration: none; color: #f1c40f;">360 Tech</a></p>
             </div>
         </div>
     </footer>

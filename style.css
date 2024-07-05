@@ -23,6 +23,7 @@ body {
 /* Header Styles */
 header {
     background-color: #023535;
+    
 }
 
 .top-bar {
@@ -30,6 +31,7 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 10px 0;
+    
 }
 
 .datetime {
@@ -42,6 +44,7 @@ header {
     font-size: 15px;
     margin-right: 10px;
     padding-left: 30px;
+    
     
 }
 
@@ -138,82 +141,9 @@ header {
     cursor: pointer;
 }
 
-/* Hero Slideshow Styles */
-.hero-slideshow {
-    position: relative;
-    height: 80vh;
-    overflow: hidden;
-}
-
-.slide {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
-}
-
-.slide.active {
-    opacity: 1;
-}
-
-.slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-
-
-.prev, .next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 30px;
-    color: #fff;
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 10px;
-    text-decoration: none;
-    transition: background-color 0.3s;
-}
-
-.prev:hover, .next:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-}
-
-.prev {
-    left: 10px;
-}
-
-.next {
-    right: 10px;
-}
-
-.dot-container {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.dot {
-    display: inline-block;
-    width: 12px;
-    height: 12px;
-    background-color: rgba(255, 255, 255, 0.5);
-    border-radius: 50%;
-    margin: 0 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.dot.active, .dot:hover {
-    background-color: #fff;
-}
 
 /* Home Section Styles */
+
 .home {
     padding: 80px 0;
     background-color: #fff;
@@ -282,7 +212,7 @@ header {
         margin-top: -50px;
 
     }
-
+    
     .cta-button {
         flex: 1 1 10%;
     }
@@ -367,12 +297,14 @@ header {
     .column {
       flex: 50%;
       max-width: 50%;
+      
     }
     .staff-card a {
     color: #0663dc;
     text-decoration: none;
     font-size: 12px;
   }
+  
   }
 .gallery {
     background-color: #eaeef1;
@@ -460,6 +392,7 @@ header {
         padding-top: -90px;
         margin-top: -50px;
       }
+      
   }
 
 
@@ -809,14 +742,12 @@ footer {
         display: none;
     }
     
-    .hero-slideshow {
-        height: 60vh;
-    }
-
+    
 
     .home p {
         font-size: 10px;
     }
+    
 
   
    
@@ -830,15 +761,15 @@ footer {
     .school-logo img {
         height: 40px;
     }
-
+    .highlights h2 {
+        font-size: 4px;
+        color: red;
+    }
     .school-name {
         font-size: 16px;
     }
 
-    .hero-slideshow {
-        height: 50vh;
-    }
-
+   
    
 
     .home h1 {
@@ -846,10 +777,11 @@ footer {
         text-align: center;
         margin-bottom: 3px;
     }
+    
 
     .home p {
-        font-size: 14px;
-        padding-top: -50px;
+        font-size: 11px;
+        margin-bottom: -20px;
     }
 
 
@@ -978,45 +910,7 @@ footer {
     }
     
 }
-.caption {
-    position: absolute;
-    bottom: 100px;
-    left: 35%;
-    background-color: rgba(0, 0, 0, 0.7);
-    color: #fff;
-    font-size: 20px;
-    font-family: "Libre Franklin", sans-serif;
-  font-optical-sizing: auto;
-  font-style: normal;
-    padding: 40px;
-    border-radius: 10px;
-}
 
-/* Adjust caption for tablets */
-@media (max-width: 768px) {
-    .caption {
-        position: absolute;
-        bottom: 60px;
-        left: 190px;
-        background-color: rgba(0, 0, 0, 0.7);
-        color: #fff;
-        padding: 10px 20px;
-        font-size: 18px;
-    }
-}
-
-/* Adjust caption for mobile devices */
-@media (max-width: 480px) {
-    .caption {
-        position: absolute;
-        bottom: 60px;
-        left: 12%;
-        background-color: rgba(0, 0, 0, 0.7);
-        color: #fff;
-        padding: 10px 20px;
-        font-size: 18px;
-    }
-}
 .container h2{
            margin-top: 20px;     
             font-size: 36px;
@@ -1025,6 +919,9 @@ footer {
             display: inline-block;
             top: -20px;
 }
+
+
+
 
 /* Highlight Styles */
 .highlights {
@@ -1116,6 +1013,7 @@ footer {
         align-items: center;
         justify-content: center;
     }
+    
     .highlight-front i {
         font-size: 30px;
         padding-top: 60px;
@@ -1135,6 +1033,7 @@ footer {
     .highlight-back p {
         font-size: 14px;
     }
+    
 }
 @media screen and (max-width: 480px) {
     .highlight-item {
@@ -1165,6 +1064,7 @@ footer {
         font-size: 14px;
         margin-top: 12px;
     }
+    
 }
 
 
