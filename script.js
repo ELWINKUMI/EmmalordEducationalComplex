@@ -233,3 +233,39 @@ function animateValue(obj, start, end, duration) {
     };
     window.requestAnimationFrame(step);
 }
+
+(function() {
+    emailjs.init("xcxKiRYGT8ejGSrNR");
+})();
+
+document.getElementById('contact-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    var submitButton = document.getElementById('submit-btn');
+    var originalText = submitButton.textContent;
+
+    submitButton.disabled = true;
+    submitButton.innerHTML = 'Sending... <i class="fa fa-paper-plane"></i>';
+    submitButton.classList.add('sending');
+
+    emailjs.sendForm('service_59bwpcv', 'template_dh4cnlc', this)
+        .then(function(response) {
+            console.log('SUCCESS!', response.status, response.text);
+            submitButton.innerHTML = 'Message Sent <i class="fa fa-check"></i>';
+            
+            setTimeout(function() {
+                submitButton.innerHTML = originalText + ' <i class="fa fa-paper-plane"></i>';
+                submitButton.disabled = false;
+                submitButton.classList.remove('sending');
+            }, 3000);
+        }, function(error) {
+            console.log('FAILED...', error);
+            submitButton.innerHTML = 'Failed to Send <i class="fa fa-times"></i>';
+            
+            setTimeout(function() {
+                submitButton.innerHTML = originalText + ' <i class="fa fa-paper-plane"></i>';
+                submitButton.disabled = false;
+                submitButton.classList.remove('sending');
+            }, 3000);
+        });
+});

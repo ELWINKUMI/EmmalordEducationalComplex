@@ -499,145 +499,130 @@ header {
 .contact-form button:hover {
     background-color: #035e5e;
 }
-/* Footer Styles */
 footer {
     background-color: #023535;
     color: #fff;
-    padding: 0px 0;
+    padding: 40px 0;
     font-size: 14px;
-    margin-right: 5px;
-    margin-left: 5px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
 .footer-content {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
 }
 
 .footer-section {
     flex: 1;
-    min-width: 250px;
-    margin: 10px 0;
-    padding: 0 15px;
+    min-width: 200px;
+    margin-bottom: 20px;
 }
 
 .footer-section h4 {
-    margin-bottom: 20px;
-    font-size: 16px;
     color: #f1c40f;
+    margin-bottom: 15px;
     border-bottom: 2px solid #f1c40f;
     padding-bottom: 5px;
 }
 
-.footer-section p,
-.footer-section ul,
-.footer-section form {
-    margin: 0 0 10px;
+.footer-section p, .footer-section ul {
+    margin: 0;
+    padding: 0;
 }
 
 .footer-section ul {
     list-style: none;
-    padding: 0;
-    text-decoration: none;
 }
 
 .footer-section ul li {
     margin-bottom: 10px;
-    text-decoration: none;
 }
 
-.footer-section ul li a {
+.footer-section a {
     color: #fff;
     text-decoration: none;
     transition: color 0.3s;
 }
 
-.footer-section ul li a:hover {
+.footer-section a:hover {
     color: #f1c40f;
-    text-decoration: underline;
 }
 
 .social-links a {
-    margin-right: 10px;
-    color: #fff;
     font-size: 20px;
-    text-decoration: none;
-    transition: color 0.3s;
+    margin-right: 15px;
 }
 
-.social-links a:hover {
-    color: #f1c40f;
-}
-
-.message-form form {
-    display: flex;
-    flex-direction: column;
-}
-
-.message-form form input,
-.message-form form textarea {
+.message-form input, .message-form textarea {
+    width: 100%;
     padding: 10px;
     margin-bottom: 10px;
     border: none;
     border-radius: 5px;
 }
 
-.message-form form button {
+.message-form button {
+    width: 100%;
     padding: 10px;
-    border: none;
     background-color: #f1c40f;
-    color: #000;
-    cursor: pointer;
+    color: #023535;
+    border: none;
     border-radius: 5px;
-    transition: background-color 0.3s ease;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    position: relative;
+    overflow: hidden;
 }
 
-.message-form form button:hover {
+.message-form button:hover {
     background-color: #d4ac0d;
 }
 
-/* Footer Bottom Styles */
-.footer-bottom {
+.message-form button i {
+    margin-left: 5px;
+    transition: transform 0.5s ease-in-out;
+}
+
+.message-form button.sending i {
+    animation: fly 1s ease-in-out;
+}
+
+@keyframes fly {
+    0% { transform: translateX(0); }
+    50% { transform: translateX(150%); opacity: 0; }
+    51% { transform: translateX(-150%); opacity: 0; }
+    100% { transform: translateX(0); opacity: 1; }
+}
+
+.copyright {
     text-align: center;
-    padding: 10px 0;
     margin-top: 20px;
+    padding-top: 20px;
     border-top: 1px solid #f1c40f;
 }
 
-.footer-bottom p {
-    margin: 0;
-}
-
-.footer-bottom a {
-    color: #f1c40f;
+.copyright a {
+    color: #f1c40f; /* This makes the link yellow */
     text-decoration: none;
     transition: color 0.3s;
 }
 
-.footer-bottom a:hover {
-    color: #d4ac0d;
+.copyright a:hover {
+    color: #d4ac0d; /* This gives a slightly darker yellow on hover */
 }
-
-/* Responsive Styles for Footer */
 @media (max-width: 768px) {
     .footer-content {
         flex-direction: column;
-        align-items: center;
     }
-
+    
     .footer-section {
-        min-width: 100%;
-        text-align: center;
-        margin: 20px 0;
-        padding: 0 10px;
-    }
-
-    .social-links {
-        margin-bottom: 20px;
+        width: 100%;
     }
 }
 
@@ -1168,26 +1153,7 @@ footer {
 .resources {
     background-color: #fff;
     padding: 60px 0;
-    padding-top: 29px;
-}
-
-.resources h2 {
-    color: #023535;
-    text-align: center;
-    margin-bottom: 30px;
-    font-size: 2rem;
-    font-weight: bold;
-}
-
-.resources p {
-    color: #555;
-    text-align: left;
-    margin-bottom: 20px;
-    font-size: 1rem;
-}
-
-.resources ul {
-    list-style-type: none;
+    padding-top: 29;
     padding: 0;
     text-align: left;
 }
