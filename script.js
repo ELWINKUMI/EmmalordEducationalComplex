@@ -87,39 +87,73 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// JavaScript for Gallery Lightbox
-document.addEventListener('DOMContentLoaded', () => {
-    const galleryImages = document.querySelectorAll('.gallery-grid img');
-    const lightbox = document.createElement('div');
-    const lightboxImage = document.createElement('img');
-    const closeButton = document.createElement('span');
 
-    lightbox.classList.add('lightbox');
-    closeButton.classList.add('lightbox-close');
-    closeButton.innerHTML = '&times;';
-
-    lightbox.appendChild(lightboxImage);
-    lightbox.appendChild(closeButton);
-    document.body.appendChild(lightbox);
-
-    galleryImages.forEach((image) => {
-        image.addEventListener('click', () => {
-            lightboxImage.src = image.src;
-            lightbox.classList.add('active');
-        });
-    });
-
-    closeButton.addEventListener('click', () => {
-        lightbox.classList.remove('active');
-    });
-
-    lightbox.addEventListener('click', (e) => {
-        if (e.target !== lightboxImage) {
-            lightbox.classList.remove('active');
+//Gallery
+document.addEventListener('DOMContentLoaded', function() {
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    let currentIndex = 0;
+  
+    function showImage(index) {
+      const images = Array.from(galleryItems).map(item => item.querySelector('img').src);
+      const lightbox = document.createElement('div');
+      lightbox.id = 'lightbox';
+      lightbox.innerHTML = `
+        <div class="lightbox-content">
+          <img src="${images[index]}" alt="Enlarged gallery image">
+          <span class="close">&times;</span>
+          <span class="prev">&lt;</span>
+          <span class="next">&gt;</span>
+        </div>
+      `;
+      document.body.appendChild(lightbox);
+  
+      const closeBtn = lightbox.querySelector('.close');
+      const prevBtn = lightbox.querySelector('.prev');
+      const nextBtn = lightbox.querySelector('.next');
+      const img = lightbox.querySelector('img');
+  
+      closeBtn.addEventListener('click', closeLightbox);
+      prevBtn.addEventListener('click', () => navigate(-1));
+      nextBtn.addEventListener('click', () => navigate(1));
+      img.addEventListener('click', toggleZoom);
+  
+      lightbox.addEventListener('click', function(e) {
+        if (e.target === lightbox) closeLightbox();
+      });
+  
+      document.addEventListener('keydown', handleKeyPress);
+  
+      function navigate(step) {
+        currentIndex = (currentIndex + step + images.length) % images.length;
+        img.src = images[currentIndex];
+        img.classList.remove('zoomed');
+      }
+  
+      function handleKeyPress(e) {
+        switch(e.key) {
+          case 'ArrowLeft': navigate(-1); break;
+          case 'ArrowRight': navigate(1); break;
+          case 'Escape': closeLightbox(); break;
         }
+      }
+  
+      function toggleZoom() {
+        img.classList.toggle('zoomed');
+      }
+  
+      function closeLightbox() {
+        document.body.removeChild(lightbox);
+        document.removeEventListener('keydown', handleKeyPress);
+      }
+    }
+  
+    galleryItems.forEach((item, index) => {
+      item.addEventListener('click', function() {
+        currentIndex = index;
+        showImage(currentIndex);
+      });
     });
-});
-
+  });
 // Staff modal functionality
 document.addEventListener('DOMContentLoaded', () => {
     const staffCards = document.querySelectorAll('.staff-card');
@@ -268,4 +302,16 @@ document.getElementById('contact-form').addEventListener('submit', function(even
                 submitButton.classList.remove('sending');
             }, 3000);
         });
+});
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    var homeLink = document.getElementById('homeLink');
+    homeLink.addEventListener('click', function(e) {
+        e.preventDefault(); // Prevent the default anchor behavior
+        window.location.href = '#home'; // Navigate to #home
+        setTimeout(function() {
+            location.reload(); // Refresh the page after a short delay
+        }, 100);
+    });
 });
